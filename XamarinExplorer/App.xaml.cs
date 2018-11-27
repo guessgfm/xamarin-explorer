@@ -12,7 +12,7 @@ namespace XamarinExplorer
 {
 	public partial class App : Application
 	{
-		public static string WebServiceUrl = "";
+		public static string WebServiceUrl = "http://cloud-services.azurewebsites.net/api/products";
 		public static bool UseMockDataStore = true;
 
 		public App()
@@ -28,7 +28,9 @@ namespace XamarinExplorer
 			else
 				DependencyService.Register<IRepository<Models.Item>, Repository<Models.Item>>();
 
-			MainPage = new NavigationPage(new TabsPage());
+            DependencyService.Register<IRepository<Product>, Repository<Product>>();
+
+            MainPage = new NavigationPage(new TabsPage());
 		}
 
 		protected override void OnStart()

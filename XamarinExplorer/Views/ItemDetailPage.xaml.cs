@@ -4,12 +4,12 @@ namespace XamarinExplorer.Views
 {
 	public partial class ItemDetailPage
 	{
-		public ItemDetailPage(Item model)
+		public ItemDetailPage(Product model)
 		{
 			InitializeComponent();
 
 			BindingContext = new {
-				Title = model?.Text,
+				Title = model?.Name,
 				Item = model 
 			};
 		}
