@@ -6,6 +6,13 @@
              Title="Menu">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">
+            <StackLayout BackgroundColor="{StaticResource PrimaryDark}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                    <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                        <Label Text="Explore" FontSize="36" TextColor="White" />
+                    </ContentView>
+                </StackLayout>
+            </StackLayout>
             <StackLayout Orientation="Vertical">
                 <ListView ItemsSource="{Binding Menu}" HasUnevenRows="true">
                     <ListView.ItemTemplate>

@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
              xmlns:iOS="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:views="clr-namespace:XamarinExplorer.Views"
              x:Class="XamarinExplorer.Views.ItemsPage" Title="{Binding Title}">
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="RefreshToolbar" Text="Refresh">
@@ -11,7 +12,7 @@
             </ToolbarItem.Order>
         </ToolbarItem>
     </ContentPage.ToolbarItems>
-   <ContentPage.Content xmlns:views="clr-namespace:XamarinExplorer.Views">
+   <ContentPage.Content >
         <StackLayout Orientation="Vertical" VerticalOptions="Fill">
             <SearchBar HeightRequest="40"
                        BackgroundColor="{StaticResource PrimaryDark}"
@@ -36,16 +37,16 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                                    <views:CardView>
-                                        <StackLayout Padding="10" Orientation="Vertical">
-                                            <StackLayout Orientation="Horizontal">
-                                                <Label Text="{Binding Text}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}"
-                                                       FontSize="16" HorizontalOptions="FillAndExpand" />
-                                                <Switch IsToggled="false" HorizontalOptions="End" OnColor="{StaticResource Accent}" />
-                                            </StackLayout>
-                                            <Label Text="{Binding Description}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
-                                        </StackLayout>
-                                    </views:CardView>
+                            <views:CardView>
+                                <StackLayout Padding="10" Orientation="Vertical">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding Text}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}"
+                                               FontSize="16" HorizontalOptions="FillAndExpand" />
+                                        <Switch IsToggled="false" HorizontalOptions="End" OnColor="{StaticResource Accent}" />
+                                    </StackLayout>
+                                    <Label Text="{Binding Description}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
+                                </StackLayout>
+                            </views:CardView>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

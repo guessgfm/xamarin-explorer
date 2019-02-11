@@ -17,6 +17,6 @@
     </MasterDetailPage.ToolbarItems>
 
     <MasterDetailPage.Detail>
-        <local:ItemsPage />
+        <local:TabsPage />
     </MasterDetailPage.Detail>
 </MasterDetailPage>

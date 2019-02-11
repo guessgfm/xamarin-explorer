@@ -1,7 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using XamarinExplorer.Models;
+﻿using Xamarin.Forms;
 using XamarinExplorer.Services;
 using XamarinExplorer.ViewModels;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
@@ -10,7 +7,7 @@ namespace XamarinExplorer.Views
 {
 	public partial class ItemsPage : ContentPage
 	{
-		ListViewModel<Item> _viewModel;
+		ListViewModel<Models.Item> _viewModel;
 
 		public ItemsPage()
 		{
@@ -18,8 +15,8 @@ namespace XamarinExplorer.Views
 
 			On<Xamarin.Forms.PlatformConfiguration.iOS>().SetLargeTitleDisplay(LargeTitleDisplayMode.Always);
 				
-			var repository = DependencyService.Get<IRepository<Item>>() ?? new MockDataStore();
-			BindingContext = _viewModel = new ListViewModel<Item>(repository);
+			var repository = DependencyService.Get<IRepository<Models.Item>>() ?? new MockDataStore<Models.Item>();
+			BindingContext = _viewModel = new ListViewModel<Models.Item>(repository);
 
 			_viewModel.FilterPredicate = item => MatchesFilter(item.Text) || MatchesFilter(item.Description);
 			
@@ -39,7 +36,7 @@ namespace XamarinExplorer.Views
 
 		async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
 		{
-			var item = args.SelectedItem as Item;
+			var item = args.SelectedItem as Models.Item;
 			if (item == null)
 				return;
 			

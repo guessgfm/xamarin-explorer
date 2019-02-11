@@ -24,11 +24,11 @@ namespace XamarinExplorer
             InitializeComponent();
 
 			if (UseMockDataStore)
-				DependencyService.Register<IRepository<Models.Item>, MockDataStore>();
+				DependencyService.Register<IRepository<Models.Item>, MockDataStore<Models.Item>>();
 			else
 				DependencyService.Register<IRepository<Models.Item>, Repository<Models.Item>>();
 
-			MainPage = new NavigationPage(new TabsPage());
+			MainPage = new NavigationPage(new HomePage());
 		}
 
 		protected override void OnStart()

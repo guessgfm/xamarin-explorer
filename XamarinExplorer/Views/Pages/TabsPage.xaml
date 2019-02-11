@@ -14,7 +14,7 @@
         </ToolbarItem>
     </TabbedPage.ToolbarItems>
     <TabbedPage.Children>
-        <views:MenuPage x:Name="MenuScreen" Title="Home">
+        <views:MenuPage x:Name="MenuScreen" Title="Welcome">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="iOS" Value="tab_about.png" />
@@ -22,13 +22,22 @@
                 </OnPlatform>
             </NavigationPage.Icon>
         </views:MenuPage>
-        <views:PluginsPage x:Name="ItemsScreen" Title="Plugins">
+        <views:ItemsPage x:Name="ItemsScreen" Title="Lists">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="iOS" Value="tab_feed.png" />
                     <On Platform="Android" Value="ic_list.png" />
                 </OnPlatform>
             </NavigationPage.Icon>
-        </views:PluginsPage>
+        </views:ItemsPage>
+        
+        <views:ControlsPage x:Name="Controls" Title="Controls">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="tab_feed.png" />
+                    <On Platform="Android" Value="ic_list.png" />
+                </OnPlatform>
+            </NavigationPage.Icon>
+        </views:ControlsPage>
     </TabbedPage.Children>
 </TabbedPage>

@@ -41,6 +41,11 @@ namespace XamarinExplorer.Services
 			return null;
 		}
 
+		public virtual async void Add(T item) 
+		{
+			await AddAsync(item);
+		}
+
 		public virtual async Task<bool> AddAsync(T item)
 		{
 			if (item == null || !CrossConnectivity.Current.IsConnected)
